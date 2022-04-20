@@ -42,14 +42,16 @@ services:
       - '6379:6379'
 
   cassandra:
-    user: root
+    user: 'root'
     image: bitnami/cassandra:4.0.3
     container_name: online_shop_casandra
     restart: unless-stopped
     ports:
       - '9042:9042'
     volumes:
-      - ./casandra/data:/bitnami
+      - ./cassandra/data:/bitnami
+    env_file:
+      - ./cassandra/cassandra.env
 
   rabbitmq-stomp:
     image: onedatateam/rabbitmq-stomp:latest
