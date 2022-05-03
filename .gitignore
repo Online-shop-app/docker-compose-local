@@ -1,3 +1,5 @@
+/.idea/
 /postgres/data/
 /cassandra/data/
-/.idea/
+/rabbitmq/data/
+/nginx/static/build/
